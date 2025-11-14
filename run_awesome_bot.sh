@@ -2,7 +2,7 @@
 set -euo pipefail
 
 
-DEAD_URLS='opencollective.com','http://copperdroid.isg.rhul.ac.uk/copperdroid/',\
+DEAD_URLS = 'opencollective.com','http://copperdroid.isg.rhul.ac.uk/copperdroid/',\
 'http://sanddroid.xjtu.edu.cn/','http://www.foresafe.com/scan',\
 'https://github.com/BaiduSecurityLabs/ZjDroid','https://github.com/yangbean9/ZjDroid',\
 'https://appanalysis.org/download.html','https://labs.mwrinfosecurity.com/tools/2012/03/16/mercury/',\
@@ -38,13 +38,19 @@ DEAD_URLS='opencollective.com','http://copperdroid.isg.rhul.ac.uk/copperdroid/',
 'https://web.archive.org/web/20180721134044/http://www.fasteque.com:80/android-reverse-engineering-101-part-1/',\
 'https://manifestsecurity.com/appie/'
 
-FLAKY_URLS='http://safe.ijiami.cn/',\
+FLAKY_URLS = 'http://safe.ijiami.cn/',\
 'https://apkcombo.com/apk-downloader/',\
 'https://www.nowsecure.com/'
 
-SRC_FILE=README.md
+SRC_FILE = README.md
 # Install urlsup with `cargo install urlsup`
 urlsup \
-  --allow 301,302 \
-  --white-list ${DEAD_URLS},${FLAKY_URLS} \
-  ${SRC_FILE}
+--allow 301,302 \
+--white-list $ {
+     DEAD_URLS
+},$ {
+     FLAKY_URLS
+} \
+$ {
+     SRC_FILE
+}
